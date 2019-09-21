@@ -3,12 +3,12 @@ import requests
 import urllib
 
 file_name = input("Please enter a name for your file\n")
+url = input("Please enter a link to a polygon article.\n")
+new_url = requests.get(url)
+html = new_url.text
+
 out = open(file_name + ".txt", "a") 
-
-with open('sample.html') as html_file:
-    soup = BeautifulSoup(html_file, 'lxml')
-
-
+soup = BeautifulSoup(html, 'lxml')
 
 #deletes extra text
 filed = soup.find_all("p", attrs={"class":"sr-only c-entry-box--compact__labels-title"})
