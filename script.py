@@ -10,7 +10,6 @@ while line:
     url_list.append(line.strip())
     line = links.readline()
 
-
 links.close()
 
 cnt = 1
